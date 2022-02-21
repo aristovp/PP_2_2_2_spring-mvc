@@ -15,18 +15,8 @@ public class CarsController {
     @GetMapping("/cars")
     public String getCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
         CarServiceImpl carService = new CarServiceImpl();
-        Optional<Integer> optionalCount = Optional.ofNullable(count);
 
-        if (optionalCount.isPresent()) {
-
-            if (count >= 5) {
-                model.addAttribute("carList", carService.getAllListCars());
-            } else {
-                model.addAttribute("carList", carService.getListCars(count));
-            }
-        } else {
-            model.addAttribute("carList", carService.getAllListCars());
-        }
+        model.addAttribute("carList", carService.getListCars(count));
         return "cars";
     }
 }

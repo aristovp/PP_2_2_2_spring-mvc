@@ -62,14 +62,4 @@ public class Car {
                 ", color='" + color + '\'' +
                 '}';
     }
-
-    public List<Car> getFiveCars() {
-        List<Car> cars = new ArrayList<>();
-        cars.add(new Car("volvo", 2, "black"));
-        cars.add(new Car("BMW", 5, "blue"));
-        cars.add(new Car("reno", 1, "white"));
-        cars.add(new Car("toyota", 9, "red"));
-        cars.add(new Car("mazda", 3, "orang"));
-        return cars;
-    }
 }
